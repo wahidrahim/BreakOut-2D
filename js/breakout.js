@@ -5,6 +5,7 @@ var Game = (function() {
   var score = 0;
   var lives = 3;
   var paused = false;
+  var won = false;
 
   document.addEventListener('mousemove', function(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
@@ -121,11 +122,6 @@ var Game = (function() {
     ball.dy = randomVelocity(-6, -3);
   }
 
-  var gameOver = function() {
-    alert('Game over.');
-    document.location.reload();
-  }
-
   var collisionCheck = function() {
     // side walls
     if (ball.x + ball.dy > canvas.width - ball.r || ball.x + ball.dx < ball.r) {
@@ -152,6 +148,11 @@ var Game = (function() {
             }
             brick.exists = 0;
             score += 10;
+
+            if (score == 10 * (brick_wall.cols * brick_wall.rows)) {
+              alert('You win!');
+              document.location.reload();
+            }
           }
         }
       }
@@ -171,7 +172,8 @@ var Game = (function() {
       }
       else {
         drawTexts();
-        gameOver();
+        alert('Game over.');
+        document.location.reload();
       }
     }
   }
