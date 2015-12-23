@@ -3,8 +3,16 @@
   margin: 0;
 }
 
+body {
+  background-color: #000000;
+}
+
 canvas {
   background: #333;
   display: block;
   margin: 0 auto;
+}
+
+code {
+  color: white;
 }
