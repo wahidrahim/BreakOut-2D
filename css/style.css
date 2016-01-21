@@ -29,6 +29,10 @@ canvas {
   background: transparent;
 }
 
+.hljs-comment {
+  font-style: italic;
+}
+
 code {
   color: white;
   font-family: monospace;

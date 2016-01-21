@@ -2,17 +2,17 @@ var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
 var Game = (function() {
-  /**************************
-   * GLOBAL STATE VARIABLES *
-   **************************/
+  ////////////////////////////
+  // GLOBAL STATE VARIABLES //
+  ////////////////////////////
   var score = 0;
   var lives = 3;
   var paused = false;
   var won = false;
 
-  /*******************
-   * EVENT LISTENERS *
-   *******************/
+  /////////////////////
+  // EVENT LISTENERS //
+  /////////////////////
   document.addEventListener('mousemove', function(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
     if(relativeX > 0 && relativeX < canvas.width) {
@@ -30,9 +30,9 @@ var Game = (function() {
     }
   });
 
-  /*********************
-   * PRIVATE FUNCTIONS *
-   *********************/
+  ///////////////////////
+  // PRIVATE FUNCTIONS //
+  ///////////////////////
   // used for changing the balls velocity
   var randomVelocity = function(min, max) {
     return ((Math.random() * (max - min + 1)) + min);
@@ -120,9 +120,9 @@ var Game = (function() {
     }
   };
 
-  /*****************
-   * THE GAME LOOP *
-   *****************/
+  ///////////////
+  // GAME LOOP //
+  ///////////////
   var gameLoop = function() {
     if (!paused) {
       // clear canvas
@@ -143,9 +143,9 @@ var Game = (function() {
     requestAnimationFrame(gameLoop);
   };
 
-  /*******************
-   * PRIVATE OBJECTS *
-   *******************/
+  /////////////////////
+  // PRIVATE OBJECTS //
+  /////////////////////
   var paddle = {
     width: 100,
     height: 15,
@@ -229,9 +229,9 @@ var Game = (function() {
   };
 
   return {
-    /*******************
-     * PUBLIC FUNCTION *
-     *******************/
+    ////////////
+    // PUBLIC //
+    ////////////
     start: function() {
       // start off paused (click to start)
       paused = true;
