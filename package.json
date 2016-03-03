@@ -1,14 +1,12 @@
 {
   "name": "breakout-arcade",
   "version": "1.0.0",
-  "private": "true",
-  "description": "",
-  "main": "app.js",
+  "private": true,
   "scripts": {
     "start": "node ./app.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Wahid Rahim",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
     "morgan": "^1.7.0"
